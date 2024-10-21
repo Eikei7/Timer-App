@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import EasyTimer from 'easytimer.js';
 import LoadingScreen from '../components/LoadingScreen';
 import TextTimer from '../components/TextTimer';

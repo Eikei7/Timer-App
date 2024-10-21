@@ -1,3 +1,6 @@
+import '../css/styles.css';
+import { motion } from 'framer-motion';
+
 const LoadingScreen = ({ changeView }) => {
     return (
       <motion.div 
@@ -7,12 +10,13 @@ const LoadingScreen = ({ changeView }) => {
         exit={{ opacity: 0 }}
       >
         <motion.img 
-          src="/logo.png" 
+          src="./img/timer-100.png" 
           alt="Logo"
           whileHover={{ scale: 1.2 }}
           onClick={() => changeView('SetTimer')}
         />
-        <p>Din slogan här</p>
+        <h2>TimeDeck</h2>
+        <p>For all your timing needs</p>
       </motion.div>
     );
   };

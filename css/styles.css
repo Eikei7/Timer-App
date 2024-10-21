@@ -18,6 +18,9 @@
   
   .app-container {
     transition: opacity 0.5s ease-in-out;
+    width: 375px;
+    height: 667px;
+    border: solid 2px white;
   }
   
   .set-timer, .analogue-timer, .alarm-view, .text-timer {
