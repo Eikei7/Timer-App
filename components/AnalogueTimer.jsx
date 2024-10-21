@@ -1,4 +1,3 @@
-import '../css/styles.css';
 import { useEffect, useState } from 'react';
 import useTimer from 'easytimer-react-hook';
 

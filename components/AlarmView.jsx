@@ -1,5 +1,3 @@
-import '../css/styles.css';
-
 const AlarmView = ({ changeView }) => {
     return (
       <div className="alarm-view">

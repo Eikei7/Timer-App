@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useTimer from 'easytimer-react-hook';
-import '../css/styles.css';
 
 const SetTimer = ({ changeView, setTimer, isActive }) => {
   const [minutes, setMinutes] = useState(0);

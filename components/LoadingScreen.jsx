@@ -1,4 +1,3 @@
-import '../css/styles.css';
 import { motion } from 'framer-motion';
 
 const LoadingScreen = ({ changeView }) => {

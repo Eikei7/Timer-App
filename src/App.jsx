@@ -5,6 +5,7 @@ import TextTimer from '../components/TextTimer';
 import AlarmView from '../components/AlarmView';
 import AnalogueTimer from '../components/AnalogueTimer';
 import SetTimer from '../components/SetTimer';
+import './App.css';
 
 const App = () => {
   const [view, setView] = useState('Loading');
