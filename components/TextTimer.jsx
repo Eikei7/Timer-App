@@ -1,3 +1,5 @@
+import '../css/styles.css';
+
 const TextTimer = ({ timer }) => {
     const [time, setTime] = useState(timer.getTimeValues());
   

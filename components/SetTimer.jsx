@@ -1,3 +1,5 @@
+import '../css/styles.css';
+
 const SetTimer = ({ changeView, setTimer }) => {
     const [minutes, setMinutes] = useState(0);
   

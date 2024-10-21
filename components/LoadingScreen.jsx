@@ -15,8 +15,8 @@ const LoadingScreen = ({ changeView }) => {
           whileHover={{ scale: 1.2 }}
           onClick={() => changeView('SetTimer')}
         />
-        <h2>TimeDeck</h2>
-        <p>For all your timing needs</p>
+        <h2 className="appTitle">TimeDeck</h2>
+        <p className="appText">For all your timing needs</p>
       </motion.div>
     );
   };

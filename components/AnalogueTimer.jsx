@@ -1,3 +1,5 @@
+import '../css/styles.css';
+
 const AnalogueTimer = ({ changeView, timer }) => {
     const [time, setTime] = useState(timer.getTimeValues());
   
