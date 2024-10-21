@@ -10,7 +10,7 @@ const LoadingScreen = ({ changeView }) => {
         exit={{ opacity: 0 }}
       >
         <motion.img 
-          src="./img/timer-100.png" 
+          src="./img/timer-1000.png" 
           alt="Logo"
           whileHover={{ scale: 1.2 }}
           onClick={() => changeView('SetTimer')}

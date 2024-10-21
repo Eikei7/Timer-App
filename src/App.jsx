@@ -16,11 +16,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {view === 'Loading' && <LoadingScreen changeView={changeView} />}
-      {view === 'SetTimer' && <SetTimer changeView={changeView} setTimer={setTimer} />}
-      {view === 'AnalogueTimer' && <AnalogueTimer changeView={changeView} timer={timer} />}
-      {view === 'AlarmView' && <AlarmView changeView={changeView} />}
-      {view === 'TextTimer' && <TextTimer changeView={changeView} timer={timer} />}
+      <AnalogueTimer />
     </div>
   );
 };
