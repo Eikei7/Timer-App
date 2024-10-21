@@ -6,7 +6,7 @@ const TextTimer = () => {
   // Användning av useTimer-hooken
   const [timer, isTargetAchieved] = useTimer({
     countdown: true, // Sätter timern som en nedräkning
-    startValues: { minutes: 10 }, // Startvärde på 10 minuter
+    startValues: { minutes: 1 }, // Startvärde på 10 minuter
     target: { minutes: 0 }, // Stoppvärde på 0 minuter (nedräkning till noll)
     precision: 'seconds', // Uppdateras varje sekund
     updateWhenTargetAchieved: true // Uppdatera när målet nås
