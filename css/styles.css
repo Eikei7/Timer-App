@@ -16,3 +16,15 @@
     transition: transform 1s linear;
   }
   
+  .app-container {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .set-timer, .analogue-timer, .alarm-view, .text-timer {
+    opacity: 0;
+  }
+  
+  .set-timer.active, .analogue-timer.active, .alarm-view.active, .text-timer.active {
+    opacity: 1;
+  }
+  

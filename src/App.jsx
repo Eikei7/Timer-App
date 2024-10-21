@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import EasyTimer from 'easytimer.js';
-import LoadingScreen from './LoadingScreen';
-import SetTimer from './SetTimer';
-import AnalogueTimer from './AnalogueTimer';
-import AlarmView from './AlarmView';
-import TextTimer from './TextTimer';
+import LoadingScreen from '../components/LoadingScreen';
+import TextTimer from '../components/TextTimer';
+import AlarmView from '../components/AlarmView';
+import AnalogueTimer from '../components/AnalogueTimer';
+import SetTimer from '../components/SetTimer';
 
 const App = () => {
   const [view, setView] = useState('Loading');
