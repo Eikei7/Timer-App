@@ -68,10 +68,58 @@
   }
 
   .set-timer {
-    color: white;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 375px;
     height: 667px;
+  }
+  
+  .timer-setting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .timer-value {
+    font-size: 2em;
+    margin: 0 20px;
+  }
+  
+  .arrow-btn {
+    font-size: 2em;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+  }
+  
+  .checkboxes label {
+    margin: 5px 0;
+  }
+  
+  .start-btn {
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .start-btn:hover {
+    background-color: #218838;
   }
 
   .analogue-timer {
@@ -81,11 +129,18 @@
     height: 667px;
   }
 
-  .set-timer, .analogue-timer, .alarm-view, .text-timer, .loading-screen {
-    width: 100%;
-    height: 100%;
+  .loading-screen {
     color: white;
     background-color: black;
+    width: 375px;
+    height: 667px;
+  }
+
+  .set-timer, .analogue-timer, .alarm-view, .text-timer {
+    width: 100%;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    background-color: white;
 }
 
 .set-timer.active, .analogue-timer.active, .alarm-view.active, .text-timer.active, .loading-screen.active {
