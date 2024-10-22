@@ -160,25 +160,41 @@
     align-items: center;
   }
 
-  .text-timer {
+  .digital-timer {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     width: 375px;
     height: 667px;
+    font-size: 1.7em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .set-timer, .analogue-timer, .alarm-view, .text-timer {
+  .abort-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .abort-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .set-timer, .analogue-timer, .alarm-view, .digital-timer {
     width: 100%;
     height: 100%;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
 }
 
-.set-timer.active, .analogue-timer.active, .alarm-view.active, .text-timer.active, .loading-screen.active {
+.set-timer.active, .analogue-timer.active, .alarm-view.active, .digital-timer.active, .loading-screen.active {
     opacity: 1;
 }
   

@@ -22,13 +22,13 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
-    console.log('Startvärden skickas till TextTimer:', minutes); // Logga startvärden innan de skickas
+    console.log('Startvärden skickas till TextTimer:', minutes);
     timer.start({
       countdown: true,
       startValues: { minutes: minutes }
     });
     setTimer(timer);
-    changeView('DigitalTimer', { startValues: { minutes } }); // Skickar minuter som prop till DigitalTimer
+    changeView('DigitalTimer', { startValues: { minutes } });
   };
 
   return (

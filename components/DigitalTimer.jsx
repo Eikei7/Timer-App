@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useTimer from 'easytimer-react-hook';
 
-const DigitalTimer = ({ startValues }) => {
+const DigitalTimer = ({ startValues, changeView }) => {
   // Användning av useTimer-hooken
   const [timer, isTargetAchieved] = useTimer({
     countdown: true,
@@ -39,10 +39,22 @@ const DigitalTimer = ({ startValues }) => {
     };
   }, [startValues, timer]);
 
+  // Funktion för att avbryta timern och navigera tillbaka till SetTimer
+  const abortTimer = () => {
+    console.log('Timer avbruten'); // Logg för att se när timern avbryts
+    timer.stop(); // Stoppa timern när knappen klickas
+    changeView('SetTimer'); // Navigera tillbaka till SetTimer
+  };
+
   return (
-    <div className="text-timer">
-      <h1>Timer: {timeValues.minutes}m {timeValues.seconds}s</h1>
+    <div className="digital-timer">
+      <h1>{timeValues.minutes} : {timeValues.seconds}</h1>
       {isTargetAchieved && <p>Tiden är slut!</p>}
+      
+      {/* Abort-knapp */}
+      <button onClick={abortTimer} className="abort-btn">
+        Abort Timer
+      </button>
     </div>
   );
 };

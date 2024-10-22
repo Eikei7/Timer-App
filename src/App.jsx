@@ -46,7 +46,8 @@ const App = () => {
       )}
       {view === 'DigitalTimer' && (
         <DigitalTimer 
-          startValues={startValues} // Skicka startvärden till DigitalTimer
+          startValues={startValues}
+          changeView={changeView}
         />
       )}
     </div>
