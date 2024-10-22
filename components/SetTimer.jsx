@@ -44,7 +44,7 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
         <button onClick={increaseMinutes} className="arrow-btn">&gt;</button>
       </div>
 
-      <button onClick={startTimer} className="start-btn">Start Timer</button>
+      <button onClick={startTimer} className="start-btn">START TIMER</button>
     </div>
   );
 };
