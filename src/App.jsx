@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Timer from 'easytimer.js';
 import LoadingScreen from '../components/LoadingScreen';
-import TextTimer from '../components/TextTimer';
+import DigitalTimer from '../components/DigitalTimer';
 import AlarmView from '../components/AlarmView';
 import AnalogueTimer from '../components/AnalogueTimer';
 import SetTimer from '../components/SetTimer';
@@ -10,9 +10,14 @@ import './App.css';
 const App = () => {
   const [view, setView] = useState('Loading');
   const [timer, setTimer] = useState(new Timer());
+  const [startValues, setStartValues] = useState({ minutes: 0 }); // State för att lagra startvärden
 
-  const changeView = (newView) => {
+  // Modifierad changeView för att hantera startvärden
+  const changeView = (newView, data = {}) => {
     setView(newView);
+    if (data.startValues) {
+      setStartValues(data.startValues); // Uppdaterar startvärden om de skickas
+    }
   };
 
   return (
@@ -39,10 +44,9 @@ const App = () => {
           changeView={changeView} 
         />
       )}
-      {view === 'TextTimer' && (
-        <TextTimer 
-          changeView={changeView} 
-          timer={timer} 
+      {view === 'DigitalTimer' && (
+        <DigitalTimer 
+          startValues={startValues} // Skicka startvärden till DigitalTimer
         />
       )}
     </div>

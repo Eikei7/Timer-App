@@ -8,7 +8,6 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
 
   const [timer] = useTimer({
     countdown: true, 
-    startValues: { minutes: minutes }, 
     precision: 'seconds'
   });
 
@@ -23,12 +22,13 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
+    console.log('Startvärden skickas till TextTimer:', minutes); // Logga startvärden innan de skickas
     timer.start({
       countdown: true,
       startValues: { minutes: minutes }
     });
     setTimer(timer);
-    changeView('AnalogueTimer');
+    changeView('DigitalTimer', { startValues: { minutes } }); // Skickar minuter som prop till DigitalTimer
   };
 
   return (

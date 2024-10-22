@@ -16,7 +16,7 @@
   height: 100%;
   position: relative;
   transform: translateY(-50%);
-  transform: rotate(-90deg); /* Vrider klockan för att rätta visarna */
+  transform: rotate(-90deg); /* Vrider klockan för att få visarna att starta rätt */
 }
 
 .hand {
@@ -28,18 +28,19 @@
   left: 50%;
   transform-origin: 100%;
   transform: rotate(90deg); /* Startläge för visarna */
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.05s linear; /* Smidig övergång */
 }
 
 .minute-hand {
-  width: 45%; /* Minutvisaren är längre */
+  width: 35%; /* Timvisaren är kortare */
 }
 
 .second-hand {
-  width: 50%; /* Sekundvisaren är längst */
+  width: 45%; /* Sekundvisaren är längre */
   height: 2px;
   background-color: red; /* Rödfärgad sekundvisare */
 }
+
 
 .app-container {
   transition: opacity 0.5s ease-in-out;
@@ -151,6 +152,17 @@
   .loading-screen {
     color: white;
     background-color: black;
+    width: 375px;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-timer {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     width: 375px;
     height: 667px;
     display: flex;
