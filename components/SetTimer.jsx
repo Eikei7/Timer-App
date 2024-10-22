@@ -20,7 +20,7 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
-    console.log('Startvärden skickas till TextTimer:', minutes);
+    console.log('Startvärden skickas till DigitalTimer:', minutes);
     timer.start({
       countdown: true,
       startValues: { minutes: minutes }
