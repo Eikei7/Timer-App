@@ -20,13 +20,15 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
-    console.log('Startvärden skickas till DigitalTimer:', minutes);
+    // Starta timern
     timer.start({
       countdown: true,
       startValues: { minutes: minutes }
     });
+
+    // Skicka minuterna till TextTimer och byt vy
     setTimer(timer);
-    changeView('AnalogueTimer', { startValues: { minutes } });
+    changeView('TextTimer', { minutes, seconds: 0 }); // Skicka minuter och sekunder (sekunder är 0 när den startar)
   };
 
   return (

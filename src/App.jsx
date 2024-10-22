@@ -5,6 +5,7 @@ import DigitalTimer from '../components/DigitalTimer';
 import AlarmView from '../components/AlarmView';
 import AnalogueTimer from '../components/AnalogueTimer';
 import SetTimer from '../components/SetTimer';
+import TextTimer from '../components/TextTimer';
 import './App.css';
 
 const App = () => {
@@ -48,6 +49,12 @@ const App = () => {
         <DigitalTimer 
           startValues={startValues}
           changeView={changeView}
+        />
+      )}
+      {view === 'TextTimer' && (
+        <TextTimer 
+          minutes={startValues.minutes} 
+          seconds={startValues.seconds} 
         />
       )}
     </div>
