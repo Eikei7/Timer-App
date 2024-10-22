@@ -17,29 +17,34 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <LoadingScreen 
-        changeView={changeView} 
-        isActive={view === 'Loading'} 
-      />
-      <SetTimer 
-        changeView={changeView} 
-        setTimer={setTimer} 
-        isActive={view === 'SetTimer'} 
-      />
-      <AnalogueTimer 
-        changeView={changeView} 
-        timer={timer} 
-        isActive={view === 'AnalogueTimer'} 
-      />
-      <AlarmView 
-        changeView={changeView} 
-        isActive={view === 'AlarmView'} 
-      />
-      <TextTimer 
-        changeView={changeView} 
-        timer={timer} 
-        isActive={view === 'TextTimer'} 
-      />
+      {view === 'Loading' && (
+        <LoadingScreen 
+          changeView={changeView} 
+        />
+      )}
+      {view === 'SetTimer' && (
+        <SetTimer 
+          changeView={changeView} 
+          setTimer={setTimer} 
+        />
+      )}
+      {view === 'AnalogueTimer' && (
+        <AnalogueTimer 
+          changeView={changeView} 
+          timer={timer} 
+        />
+      )}
+      {view === 'AlarmView' && (
+        <AlarmView 
+          changeView={changeView} 
+        />
+      )}
+      {view === 'TextTimer' && (
+        <TextTimer 
+          changeView={changeView} 
+          timer={timer} 
+        />
+      )}
     </div>
   );
 };

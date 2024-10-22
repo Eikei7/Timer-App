@@ -45,24 +45,24 @@
   background-color: red; /* Rödfärgad sekundvisare */
 }
 
-  .app-container {
-    transition: opacity 0.5s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 375px;
-    height: 667px;
-    background: #000000;
-    border: solid 2px white;
-  }
+.app-container {
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 375px;
+  height: 667px;
+  background: #000000;
+  border: solid 2px white;
+}
 
-  .appTitle {
+.appTitle {
     font-family: 'Righteous';
     font-size: 2.5em;
   }
   
-  .appText {
+.appText {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.5em;
   }
@@ -82,12 +82,13 @@
   }
 
   .set-timer, .analogue-timer, .alarm-view, .text-timer, .loading-screen {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .set-timer.active, .analogue-timer.active, .alarm-view.active, .text-timer.active, .loading-screen.active {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: black;
+}
+
+.set-timer.active, .analogue-timer.active, .alarm-view.active, .text-timer.active, .loading-screen.active {
     opacity: 1;
-  }
-  
+}
   
