@@ -6,11 +6,10 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   const [intervals, setIntervals] = useState(true);
   const [breaks, setBreaks] = useState(true);
 
-  // Användning av useTimer-hooken
   const [timer] = useTimer({
-    countdown: true, // Nedräkning
-    startValues: { minutes: minutes }, // Startvärde
-    precision: 'seconds' // Uppdateras varje sekund
+    countdown: true, 
+    startValues: { minutes: minutes }, 
+    precision: 'seconds'
   });
 
   const increaseMinutes = () => {
@@ -24,13 +23,10 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
-    // Starta timern när användaren klickar på knappen
     timer.start({
       countdown: true,
       startValues: { minutes: minutes }
     });
-    
-    // Sätt timern i övergripande state och byt vy
     setTimer(timer);
     changeView('AnalogueTimer');
   };
@@ -39,7 +35,14 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
     <div className={`set-timer ${isActive ? 'active' : ''}`}>
       <div className="timer-setting">
         <button onClick={decreaseMinutes} className="arrow-btn">&lt;</button>
-        <span className="timer-value">{minutes} min</span>
+        <div className="timer-display">
+          <span className="timer-value">{minutes}</span>
+          {minutes > 0 && (
+            <div className="timer-label">
+              {minutes === 1 ? 'minute' : 'minutes'}
+            </div>
+          )}
+        </div>
         <button onClick={increaseMinutes} className="arrow-btn">&gt;</button>
       </div>
 
