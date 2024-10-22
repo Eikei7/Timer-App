@@ -36,7 +36,7 @@ const App = () => {
       {view === 'AnalogueTimer' && (
         <AnalogueTimer 
           changeView={changeView} 
-          timer={timer} 
+          startValues={startValues}
         />
       )}
       {view === 'AlarmView' && (

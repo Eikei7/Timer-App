@@ -2,39 +2,45 @@ import { useEffect, useState } from 'react';
 import useTimer from 'easytimer-react-hook';
 
 const AnalogueTimer = ({ changeView, startValues }) => {
-  // Använd useTimer-hooken för nedräkning
+  // Användning av useTimer-hooken för nedräkning
   const [timer, isTargetAchieved] = useTimer({
     countdown: true,
-    startValues: startValues, // Tar emot startvärden från props
-    precision: 'seconds', // Uppdateras varje sekund
+    precision: 'seconds'
   });
 
   const [time, setTime] = useState(timer.getTimeValues());
 
   useEffect(() => {
-    // Lyssna på uppdateringar av sekunder
+    // Starta timern med startvärden från props
+    if (startValues && startValues.minutes > 0) {
+      timer.start({
+        countdown: true,
+        startValues: startValues
+      });
+    }
+
+    // Lyssna på uppdateringar av sekunder och uppdatera state
     const updateSeconds = () => {
       setTime(timer.getTimeValues());
     };
 
-    // Registrera eventet för uppdatering av sekunder
     timer.addEventListener('secondsUpdated', updateSeconds);
 
     // Hantera när målet nås (nedräkningen är slut)
     timer.addEventListener('targetAchieved', () => {
-      changeView('AlarmView');
+      changeView('AlarmView'); // Byt vy till AlarmView när tiden är ute
     });
 
     // Cleanup-funktion för att ta bort event listeners när komponenten avmonteras
     return () => {
       timer.removeEventListener('secondsUpdated', updateSeconds);
-      timer.stop();
+      timer.stop(); // Stoppa timern när komponenten avmonteras
     };
-  }, [timer, changeView]);
+  }, [startValues, timer, changeView]);
 
   // Beräkna vinkeln för visarna baserat på tiden
-  const minuteDegrees = (time.minutes + time.seconds / 60) * 6; // 360°/60 = 6° per minut
-  const secondDegrees = time.seconds * 6; // 360°/60 = 6° per sekund
+  const minuteDegrees = (time.minutes + time.seconds / 60) * 6; // 360° / 60 = 6° per minut
+  const secondDegrees = time.seconds * 6; // 360° / 60 = 6° per sekund
 
   return (
     <div className="clock">

@@ -3,8 +3,6 @@ import useTimer from 'easytimer-react-hook';
 
 const SetTimer = ({ changeView, setTimer, isActive }) => {
   const [minutes, setMinutes] = useState(0);
-  const [intervals, setIntervals] = useState(true);
-  const [breaks, setBreaks] = useState(true);
 
   const [timer] = useTimer({
     countdown: true, 
@@ -28,7 +26,7 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
       startValues: { minutes: minutes }
     });
     setTimer(timer);
-    changeView('DigitalTimer', { startValues: { minutes } });
+    changeView('AnalogueTimer', { startValues: { minutes } });
   };
 
   return (
@@ -44,25 +42,6 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
           )}
         </div>
         <button onClick={increaseMinutes} className="arrow-btn">&gt;</button>
-      </div>
-
-      <div className="checkboxes">
-        <label>
-          <input
-            type="checkbox"
-            checked={intervals}
-            onChange={() => setIntervals(!intervals)}
-          />
-          Intervals
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={breaks}
-            onChange={() => setBreaks(!breaks)}
-          />
-          5 min break / interval
-        </label>
       </div>
 
       <button onClick={startTimer} className="start-btn">Start Timer</button>
