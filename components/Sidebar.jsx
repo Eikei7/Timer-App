@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Sidebar = ({ changeView }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,17 +10,24 @@ const Sidebar = ({ changeView }) => {
 
   return (
     <div>
+      {/* Logotypen som alltid är synlig */}
       <div className="logo" onClick={toggleMenu}>
         <img src="./img/timer-100.png" alt="Logo" />
       </div>
 
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      {/* Sidomenyn, animerad med Framer Motion */}
+      <motion.div 
+        className="sidebar"
+        initial={{ x: '-100%', opacity: 0 }} // Startläge: utanför skärmen och osynlig
+        animate={{ x: isOpen ? 0 : '-100%', opacity: isOpen ? 1 : 0 }} // När öppen: x = 0 och tonas in
+        transition={{ type: 'tween', duration: 0.5 }} // Tona in och glida in under 0.5s
+      >
         <ul>
-          <li onClick={() => { changeView('AnalogueTimer'); toggleMenu(); }}>Analogue Timer</li>
-          <li onClick={() => { changeView('TextTimer'); toggleMenu(); }}>Text Timer</li>
-          <li onClick={() => { changeView('DigitalTimer'); toggleMenu(); }}>Digital Timer</li>
+          <li onClick={() => { changeView('AnalogueTimer'); toggleMenu(); }}>ANALOGUE TIMER</li>
+          <li onClick={() => { changeView('TextTimer'); toggleMenu(); }}>TEXT TIMER</li>
+          <li onClick={() => { changeView('DigitalTimer'); toggleMenu(); }}>DIGITAL TIMER</li>
         </ul>
-      </div>
+      </motion.div>
     </div>
   );
 };
