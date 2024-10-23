@@ -3,10 +3,10 @@
 
 /* Grundstruktur för klockan */
 .clock {
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  /* border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%; */
   position: relative;
   margin: 50px auto;
 }

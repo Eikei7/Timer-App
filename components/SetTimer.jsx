@@ -28,7 +28,7 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
 
     // Skicka minuterna till TextTimer och byt vy
     setTimer(timer);
-    changeView('TextTimer', { minutes, seconds: 0 }); // Skicka minuter och sekunder (sekunder är 0 när den startar)
+    changeView('AnalogueTimer', { startValues: { minutes } }); // Skicka minuter och sekunder (sekunder är 0 när den startar)
   };
 
   return (

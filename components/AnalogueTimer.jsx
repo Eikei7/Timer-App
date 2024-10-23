@@ -44,12 +44,12 @@ const AnalogueTimer = ({ changeView, startValues }) => {
 
   return (
     <div className="clock">
-      {/* Animera visarna med CSS transform baserat på beräknad vinkel */}
       <div className="clock-face">
+      <img src='../img/clockface2.png' width="400"/>
         <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegrees}deg)` }}></div>
         <div className="hand second-hand" style={{ transform: `rotate(${secondDegrees}deg)` }}></div>
       </div>
-      <button onClick={() => changeView('SetTimer')}>Cancel</button>
+      <button className="start-btn" onClick={() => changeView('SetTimer')}>Cancel</button>
     </div>
   );
 };
