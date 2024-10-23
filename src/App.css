@@ -221,4 +221,10 @@
 .set-timer.active, .analogue-timer.active, .alarm-view.active, .digital-timer.active, .loading-screen.active {
     opacity: 1;
 }
+
+/* VG-DEL */
+
+.time-in-words {
+  color: black;
+}
   
