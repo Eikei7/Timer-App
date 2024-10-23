@@ -49,7 +49,7 @@ const AnalogueTimer = ({ changeView, startValues }) => {
         <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegrees}deg)` }}></div>
         <div className="hand second-hand" style={{ transform: `rotate(${secondDegrees}deg)` }}></div>
       </div>
-      <button className="start-btn" onClick={() => changeView('SetTimer')}>Cancel</button>
+      <button className="start-btn" onClick={() => changeView('SetTimer')}>ABORT TIMER</button>
     </div>
   );
 };

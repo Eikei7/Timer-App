@@ -5,10 +5,6 @@
 .clock {
   width: 400px;
   height: 400px;
-  /* border: 2px solid rgb(0, 0, 0);
-  border-radius: 50%; */
-  position: relative;
-  margin: 50px auto;
 }
 
 .clock-face {
@@ -18,25 +14,30 @@
 }
 
 .hand {
-  width: 50%;
-  height: 6px;
+  display: block;
+  height: 50%;
   background-color: rgb(0, 0, 0);
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform-origin: 0% 0%; /* Roterar från mitten av klockan */
-  transform: rotate(0deg); /* Startar från klockan 12 */
-  transition: transform 0.05s linear; /* Smidig övergång */
+  transform-origin: bottom;
+  transition: transform 0.05s linear;
 }
 
 .minute-hand {
-  width: 35%; /* Minutvisaren är kortare */
+  height: 35%;
+  top: 15%;
+  width: 6px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .second-hand {
-  width: 45%; /* Sekundvisaren är längre */
-  height: 2px;
-  background-color: red; /* Rödfärgad sekundvisare */
+  height: 45%;
+  top: 5%; 
+  width: 2px;
+  background-color: red;
 }
 
 .app-container {
@@ -136,7 +137,7 @@
   }
   
   .start-btn:hover {
-    background-color: #218838;
+    background-color: #ffffff;
   }  
 
   .analogue-timer {
