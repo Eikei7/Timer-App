@@ -45,7 +45,7 @@ const AnalogueTimer = ({ changeView, startValues }) => {
   return (
     <div className="clock">
       <div className="clock-face">
-      <img src='../img/clockface2.png' width="400"/>
+      <img src='../img/clockface.png' width="400"/>
         <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegrees}deg)` }}></div>
         <div className="hand second-hand" style={{ transform: `rotate(${secondDegrees}deg)` }}></div>
       </div>
