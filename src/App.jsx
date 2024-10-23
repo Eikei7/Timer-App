@@ -6,23 +6,24 @@ import AlarmView from '../components/AlarmView';
 import AnalogueTimer from '../components/AnalogueTimer';
 import SetTimer from '../components/SetTimer';
 import TextTimer from '../components/TextTimer';
+import Sidebar from '../components/Sidebar';
 import './App.css';
 
 const App = () => {
   const [view, setView] = useState('Loading');
   const [timer, setTimer] = useState(new Timer());
-  const [startValues, setStartValues] = useState({ minutes: 0 }); // State för att lagra startvärden
+  const [startValues, setStartValues] = useState({ minutes: 0 });
 
-  // Modifierad changeView för att hantera startvärden
   const changeView = (newView, data = {}) => {
     setView(newView);
     if (data.startValues) {
-      setStartValues(data.startValues); // Uppdaterar startvärden om de skickas
+      setStartValues(data.startValues);
     }
   };
 
   return (
     <div className="app-container">
+      <Sidebar changeView={changeView} />
       {view === 'Loading' && (
         <LoadingScreen 
           changeView={changeView} 

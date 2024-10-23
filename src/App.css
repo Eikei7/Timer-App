@@ -1,7 +1,51 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous:regular);
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic);
 
-/* Grundstruktur för klockan */
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1001; /* Ökar z-index så att logotypen alltid är synlig */
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000; /* Se till att sidomenyn är överst */
+  padding-top: 60px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.sidebar ul li:hover {
+  background-color: #575757;
+}
+
 .clock {
   width: 400px;
   height: 400px;
