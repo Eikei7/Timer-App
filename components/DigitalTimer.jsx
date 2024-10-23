@@ -48,12 +48,11 @@ const DigitalTimer = ({ startValues, changeView }) => {
 
   return (
     <div className="digital-timer">
-      <h1>{timeValues.minutes} : {timeValues.seconds}</h1>
-      {isTargetAchieved && <p>Tiden är slut!</p>}
+      <h1 className='digital-text'>{timeValues.minutes} : {timeValues.seconds}</h1>
+      {isTargetAchieved && <p>Time's up!</p>}
       
-      {/* Abort-knapp */}
       <button onClick={abortTimer} className="abort-btn">
-        Abort Timer
+        ABORT TIMER
       </button>
     </div>
   );
