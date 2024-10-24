@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
-import useTimer from 'easytimer-react-hook';
 
-const SetTimer = ({ changeView, setTimer, isActive }) => {
+const SetTimer = ({ changeView, timer, setStartValues }) => {
   const [minutes, setMinutes] = useState(0);
-
-  const [timer] = useTimer({
-    countdown: true, 
-    precision: 'seconds'
-  });
 
   const increaseMinutes = () => {
     setMinutes(minutes + 1);
@@ -20,18 +14,24 @@ const SetTimer = ({ changeView, setTimer, isActive }) => {
   };
 
   const startTimer = () => {
+    if (minutes === 0) {
+      alert("Please set a timer greater than 0 minutes");
+      return;
+    }
 
+    timer.reset();
     timer.start({
       countdown: true,
-      startValues: { minutes: minutes }
+      startValues: { minutes } // Skicka endast minuter
     });
 
-    setTimer(timer);
+    setStartValues({ minutes });
+    console.log("Startvärden skickade:", { minutes });
     changeView('AnalogueTimer', { startValues: { minutes } });
   };
 
   return (
-    <div className={`set-timer ${isActive ? 'active' : ''}`}>
+    <div className="set-timer">
       <div className="timer-setting">
         <button onClick={decreaseMinutes} className="arrow-btn">&lt;</button>
         <div className="timer-display">

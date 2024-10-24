@@ -1,53 +1,49 @@
 import { useEffect, useState } from 'react';
 import useTimer from 'easytimer-react-hook';
 
-const AnalogueTimer = ({ changeView, startValues }) => {
-  // Användning av useTimer-hooken för nedräkning
-  const [timer, isTargetAchieved] = useTimer({
-    countdown: true,
-    precision: 'seconds'
-  });
-
+const AnalogueTimer = ({ changeView, startValues, timer }) => {
   const [time, setTime] = useState(timer.getTimeValues());
 
   useEffect(() => {
-    console.log('Startvärden:', startValues);
-    // Starta timern med startvärden från props
+    // Starta timern med startvärden från props, om minuter är större än 0
     if (startValues && startValues.minutes > 0) {
-      console.log('Startar timern med:', startValues.minutes, 'minuter');
+      console.log("Startvärden mottagna i AnalogueTimer:", startValues);
       timer.start({
         countdown: true,
-        startValues: startValues
+        startValues: startValues, // Vi använder bara minuter från startValues
       });
     }
 
-    // Lyssna på uppdateringar av sekunder och uppdatera state
-    const updateSeconds = () => {
-      setTime(timer.getTimeValues());
+    const updateTime = () => {
+      const timeValues = timer.getTimeValues();
+      setTime(timeValues);
+
+      // Logga minuter och sekunder när tiden uppdateras
+      console.log(`Tid uppdaterad: ${timeValues.minutes} minuter och ${timeValues.seconds} sekunder`);
     };
 
-    timer.addEventListener('secondsUpdated', updateSeconds);
-    console.log('Tid uppdaterad:', timer.getTimeValues());
-    // Hantera när målet nås (nedräkningen är slut)
+    timer.addEventListener('secondsUpdated', updateTime);
+
+    // Hantera när tiden är slut
     timer.addEventListener('targetAchieved', () => {
-      changeView('AlarmView'); // Byt vy till AlarmView när tiden är ute
+      console.log('Tiden är slut!');
+      changeView('AlarmView');
     });
 
-    // Cleanup-funktion för att ta bort event listeners när komponenten avmonteras
+    // Rensa event listeners när komponenten avmonteras
     return () => {
-      timer.removeEventListener('secondsUpdated', updateSeconds);
-      timer.stop(); // Stoppa timern när komponenten avmonteras
+      timer.removeEventListener('secondsUpdated', updateTime);
     };
   }, [startValues, timer, changeView]);
 
   // Beräkna vinkeln för visarna baserat på tiden
-  const minuteDegrees = (time.minutes + time.seconds / 60) * 6; // 360° / 60 = 6° per minut
-  const secondDegrees = time.seconds * 6; // 360° / 60 = 6° per sekund
+  const minuteDegrees = (time.minutes + time.seconds / 60) * 6;
+  const secondDegrees = time.seconds * 6;
 
   return (
     <div className="clock">
       <div className="clock-face">
-      <img src='../img/clockface.png' width="400"/>
+        <img src='../img/clockface.png' width="400" alt="Clock Face"/>
         <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegrees}deg)` }}></div>
         <div className="hand second-hand" style={{ transform: `rotate(${secondDegrees}deg)` }}></div>
       </div>
