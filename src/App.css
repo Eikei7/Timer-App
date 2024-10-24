@@ -162,6 +162,10 @@
     background: none;
     border: none;
     cursor: pointer;
+    outline: none;
+  }
+  .arrow-btn:focus {
+    outline: none;
   }
   
   .checkboxes {
@@ -231,13 +235,52 @@
     font-size: 14px;
     letter-spacing: 2px;
     position: relative; /* Lägg till position: relative för bättre kontroll över layouten */
+    overflow: hidden;
   }
   
   .alarm-view img {
     position: absolute;
-    top: 50%; /* Placerar bilden ungefär en tredjedel ned från toppen */
-    transform: translateY(-50%); /* Gör så att den centreras vertikalt vid 30% */
+    top: 50%;
+    transform: translateY(-50%);
+    animation: vibrate 0.5s infinite; /* Tillämpa vibrationseffekten */
   }
+  
+  @keyframes vibrate {
+    0% {
+      transform: translate(-1px, -50%) rotate(0deg);
+    }
+    10% {
+      transform: translate(2px, -50%) rotate(1deg);
+    }
+    20% {
+      transform: translate(-2px, -50%) rotate(-1deg);
+    }
+    30% {
+      transform: translate(1px, -50%) rotate(0deg);
+    }
+    40% {
+      transform: translate(-1px, -50%) rotate(1deg);
+    }
+    50% {
+      transform: translate(2px, -50%) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-2px, -50%) rotate(1deg);
+    }
+    70% {
+      transform: translate(1px, -50%) rotate(0deg);
+    }
+    80% {
+      transform: translate(-1px, -50%) rotate(-1deg);
+    }
+    90% {
+      transform: translate(2px, -50%) rotate(1deg);
+    }
+    100% {
+      transform: translate(-1px, -50%) rotate(0deg);
+    }
+  }
+  
   
   .alarm-view h1 {
     position: absolute;
@@ -248,7 +291,62 @@
   
   .alarm-view .newtimer-btn {
     position: absolute;
-    bottom: 10%;
+    bottom: 7%;
+    border: 1px solid white;
+  }
+
+  .circle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite; /* Tillämpa animation på alla cirklar */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Startstorlek */
+    }
+    50% {
+      transform: scale(1.2); /* Liten ökning i storlek */
+    }
+    100% {
+      transform: scale(1); /* Återgå till startstorlek */
+    }
+  }
+  
+  .circle1 {
+    width: 150px;
+    height: 150px;
+    background-color: #414141;
+  }
+  
+  .circle2 {
+    width: 225px;
+    height: 225px;
+    background-color: #353535;
+  }
+  
+  .circle3 {
+    width: 300px;
+    height: 300px;
+    background-color: #303030;
+  }
+  
+  .circle4 {
+    width: 400px;
+    height: 400px;
+    background-color: #272727;
   }
   
   
