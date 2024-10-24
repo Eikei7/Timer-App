@@ -19,7 +19,8 @@ const SetTimer = ({ changeView, timer, setStartValues }) => {
       return;
     }
 
-    timer.reset();
+    // timer.reset();
+    // setStartValues({ 0 : minutes });
     timer.start({
       countdown: true,
       startValues: { minutes } // Skicka endast minuter

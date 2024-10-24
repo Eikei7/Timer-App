@@ -8,6 +8,7 @@ import TextTimer from '../components/TextTimer';
 import Sidebar from '../components/Sidebar';
 import './App.css';
 import useTimer from 'easytimer-react-hook';
+import { s } from 'framer-motion/client';
 
 const App = () => {
   const [view, setView] = useState('Loading');

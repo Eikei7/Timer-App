@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import useTimer from 'easytimer-react-hook';
 
 const AnalogueTimer = ({ changeView, startValues, timer }) => {
   const [time, setTime] = useState(timer.getTimeValues());
@@ -36,6 +35,13 @@ const AnalogueTimer = ({ changeView, startValues, timer }) => {
     };
   }, [startValues, timer, changeView]);
 
+  const abortTimer = () => {
+    timer.reset(); // Nollställ timern
+    timer.stop();
+    console.log('Timern återställd');
+    changeView('SetTimer'); // Återgå till SetTimer-vyn
+  
+  };
   // Beräkna vinkeln för visarna baserat på tiden
   const minuteDegrees = (time.minutes + time.seconds / 60) * 6;
   const secondDegrees = time.seconds * 6;
@@ -47,7 +53,7 @@ const AnalogueTimer = ({ changeView, startValues, timer }) => {
         <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegrees}deg)` }}></div>
         <div className="hand second-hand" style={{ transform: `rotate(${secondDegrees}deg)` }}></div>
       </div>
-      <button className="abort-btn" onClick={() => changeView('SetTimer')}>ABORT TIMER</button>
+      <button className="abort-btn" onClick={abortTimer}>ABORT TIMER</button>
     </div>
   );
 };
