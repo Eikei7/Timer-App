@@ -99,6 +99,7 @@
   height: 667px;
   background: #EEE;
   border: solid 2px white;
+  overflow: hidden;
 }
 
 .appTitle {

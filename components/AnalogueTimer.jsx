@@ -11,8 +11,10 @@ const AnalogueTimer = ({ changeView, startValues }) => {
   const [time, setTime] = useState(timer.getTimeValues());
 
   useEffect(() => {
+    console.log('Startvärden:', startValues);
     // Starta timern med startvärden från props
     if (startValues && startValues.minutes > 0) {
+      console.log('Startar timern med:', startValues.minutes, 'minuter');
       timer.start({
         countdown: true,
         startValues: startValues
@@ -25,7 +27,7 @@ const AnalogueTimer = ({ changeView, startValues }) => {
     };
 
     timer.addEventListener('secondsUpdated', updateSeconds);
-
+    console.log('Tid uppdaterad:', timer.getTimeValues());
     // Hantera när målet nås (nedräkningen är slut)
     timer.addEventListener('targetAchieved', () => {
       changeView('AlarmView'); // Byt vy till AlarmView när tiden är ute
