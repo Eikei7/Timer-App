@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Sidebar changeView={changeView} />
+      <Sidebar hideLogo={view === 'AlarmView'} changeView={changeView} />
       {view === 'Loading' && (
         <LoadingScreen 
           changeView={changeView} 

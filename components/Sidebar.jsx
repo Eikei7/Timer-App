@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const Sidebar = ({ changeView }) => {
+const Sidebar = ({ changeView, hideLogo }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -10,10 +10,12 @@ const Sidebar = ({ changeView }) => {
 
   return (
     <div>
-      {/* Logotypen som alltid är synlig */}
-      <div className="logo" onClick={toggleMenu}>
-        <img src="./img/timer-100.png" alt="Logo" />
-      </div>
+      {/* Logotypen som alltid är synlig om 'hideLogo' inte är sant */}
+      {!hideLogo && (
+        <div className="logo" onClick={toggleMenu}>
+          <img src="./img/timer-100.png" alt="Logo" />
+        </div>
+      )}
 
       {/* Sidomenyn, animerad med Framer Motion */}
       <motion.div 

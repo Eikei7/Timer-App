@@ -11,7 +11,6 @@ const AlarmView = ({ changeView }) => {
         <div className="circle circle1"></div>
       </div>
 
-      {/* Innehållet i AlarmView */}
       <img src="../img/alarm-bell.png" alt="Alarm clock" />
       <h1>Time's up!</h1>
       <button className="newtimer-btn" onClick={() => changeView('SetTimer')}>
