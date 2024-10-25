@@ -257,43 +257,7 @@
     transform: translateY(-50%);
     animation: vibrate 0.5s infinite;
   }
-  
-  @keyframes vibrate {
-    0% {
-      transform: translate(-1px, -50%) rotate(0deg);
-    }
-    10% {
-      transform: translate(2px, -50%) rotate(1deg);
-    }
-    20% {
-      transform: translate(-2px, -50%) rotate(-1deg);
-    }
-    30% {
-      transform: translate(1px, -50%) rotate(0deg);
-    }
-    40% {
-      transform: translate(-1px, -50%) rotate(1deg);
-    }
-    50% {
-      transform: translate(2px, -50%) rotate(-1deg);
-    }
-    60% {
-      transform: translate(-2px, -50%) rotate(1deg);
-    }
-    70% {
-      transform: translate(1px, -50%) rotate(0deg);
-    }
-    80% {
-      transform: translate(-1px, -50%) rotate(-1deg);
-    }
-    90% {
-      transform: translate(2px, -50%) rotate(1deg);
-    }
-    100% {
-      transform: translate(-1px, -50%) rotate(0deg);
-    }
-  }
-  
+ 
   
   .alarm-view h1 {
     position: absolute;
@@ -327,18 +291,6 @@
     position: absolute;
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
-  }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   
   .circle1 {
@@ -394,4 +346,57 @@
   cursor: pointer;
   border-radius: 5px;
 }
-  
+
+/* CSS-Animationer  */
+
+/* ALARMKLOCKA */
+
+@keyframes vibrate {
+  0% {
+    transform: translate(-1px, -50%) rotate(0deg);
+  }
+  10% {
+    transform: translate(2px, -50%) rotate(1deg);
+  }
+  20% {
+    transform: translate(-2px, -50%) rotate(-1deg);
+  }
+  30% {
+    transform: translate(1px, -50%) rotate(0deg);
+  }
+  40% {
+    transform: translate(-1px, -50%) rotate(1deg);
+  }
+  50% {
+    transform: translate(2px, -50%) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-2px, -50%) rotate(1deg);
+  }
+  70% {
+    transform: translate(1px, -50%) rotate(0deg);
+  }
+  80% {
+    transform: translate(-1px, -50%) rotate(-1deg);
+  }
+  90% {
+    transform: translate(2px, -50%) rotate(1deg);
+  }
+  100% {
+    transform: translate(-1px, -50%) rotate(0deg);
+  }
+}
+
+/* CIRKLAR RUNT ALARMKLOCKA */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
