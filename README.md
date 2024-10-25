@@ -1,11 +1,5 @@
 # TimeDeck timer App
 
-![Timer App Screenshot](./img/screen1.PNG)
-![Timer App Screenshot](./img/screen2.PNG)
-![Timer App Screenshot](./img/screen3.PNG)
-![Timer App Screenshot](./img/screen4.PNG)
-![Timer App Screenshot](./img/screen5.PNG)
-
 ## Description
 The TimeDeck timer App is a mobile-friendly web application designed for time tracking, built with **React**, **Framer Motion** for animations, and **EasyTimer React Hook** for timer functionality. This app provides a versatile and user-friendly experience for setting, displaying, and managing a countdown timer with multiple views.
 
@@ -38,3 +32,5 @@ The app includes several views that allow the user to manage and display the tim
 The Timer App is suitable for a variety of timing scenarios, such as:
 - Kitchen timer for cooking.
 - Focus and break timers for work or study sessions.
+
+<img src="./img/screen1.PNG" alt="Alt Text" width="300" /><img src="./img/screen2.PNG" alt="Alt Text" width="300" /><img src="./img/screen3.PNG" alt="Alt Text" width="300" /><img src="./img/screen4.PNG" alt="Alt Text" width="300" /><img src="./img/screen5.PNG" alt="Alt Text" width="300" />
