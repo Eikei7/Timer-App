@@ -248,7 +248,7 @@
     font-family: 'PT Sans', sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
-    position: relative; /* Lägg till position: relative för bättre kontroll över layouten */
+    position: relative;
     overflow: hidden;
   }
   
@@ -256,7 +256,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    animation: vibrate 0.5s infinite; /* Tillämpa vibrationseffekten */
+    animation: vibrate 0.5s infinite;
   }
   
   @keyframes vibrate {
@@ -327,18 +327,18 @@
   .circle {
     position: absolute;
     border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite; /* Tillämpa animation på alla cirklar */
+    animation: pulse 2s ease-in-out infinite;
   }
   
   @keyframes pulse {
     0% {
-      transform: scale(1); /* Startstorlek */
+      transform: scale(1);
     }
     50% {
-      transform: scale(1.2); /* Liten ökning i storlek */
+      transform: scale(1.2);
     }
     100% {
-      transform: scale(1); /* Återgå till startstorlek */
+      transform: scale(1);
     }
   }
   
@@ -377,8 +377,6 @@
 .set-timer.active, .analogue-timer.active, .alarm-view.active, .digital-timer.active, .loading-screen.active {
     opacity: 1;
 }
-
-/* VG-DEL */
 
 .time-in-words {
   color: black;

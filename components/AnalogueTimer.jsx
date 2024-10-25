@@ -9,7 +9,7 @@ const AnalogueTimer = ({ changeView, startValues, timer }) => {
       console.log("Startvärden mottagna i AnalogueTimer:", startValues);
       timer.start({
         countdown: true,
-        startValues: startValues, // Vi använder bara minuter från startValues
+        startValues: startValues,
       });
     }
 

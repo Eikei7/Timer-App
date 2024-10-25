@@ -8,7 +8,6 @@ import TextTimer from '../components/TextTimer';
 import Sidebar from '../components/Sidebar';
 import './App.css';
 import useTimer from 'easytimer-react-hook';
-import { s } from 'framer-motion/client';
 
 const App = () => {
   const [view, setView] = useState('Loading');
@@ -37,15 +36,15 @@ const App = () => {
       {view === 'SetTimer' && (
         <SetTimer 
           changeView={changeView} 
-          timer={timer} // Skicka timer som prop istället för setTimer
-          setStartValues={setStartValues} // Använd för att spara startvärden
+          timer={timer}
+          setStartValues={setStartValues}
         />
       )}
       {view === 'AnalogueTimer' && (
         <AnalogueTimer 
           changeView={changeView} 
           startValues={startValues}
-          timer={timer} // Skicka timer-instansen
+          timer={timer}
         />
       )}
       {view === 'AlarmView' && (
@@ -58,7 +57,7 @@ const App = () => {
         <DigitalTimer 
           startValues={startValues}
           changeView={changeView}
-          timer={timer} // Skicka timer-instansen
+          timer={timer}
         />
       )}
       {view === 'TextTimer' && (
@@ -66,7 +65,7 @@ const App = () => {
         minutes={startValues.minutes} 
         seconds={startValues.seconds} 
         timer={timer} 
-        changeView={changeView} // Skicka changeView korrekt till TextTimer
+        changeView={changeView}
       />
       )}
     </div>
