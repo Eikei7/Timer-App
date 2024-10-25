@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import StartButton from './StartButton';
 
 const SetTimer = ({ changeView, timer, setStartValues }) => {
   const [minutes, setMinutes] = useState(0);
@@ -44,7 +45,8 @@ const SetTimer = ({ changeView, timer, setStartValues }) => {
         <button onClick={increaseMinutes} className="arrow-btn">&gt;</button>
       </div>
 
-      <button onClick={startTimer} className="start-btn">START TIMER</button>
+      {/* <button onClick={startTimer} className="start-btn">START TIMER</button> */}
+      <StartButton startTimer={startTimer} />
     </div>
   );
 };
