@@ -4,7 +4,7 @@ const AlarmView = ({ changeView, timer }) => {
   const abortTimer = () => {
     timer.stop();
     console.log('Timern stoppad');
-    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } }); // Återgå till SetTimer-vyn
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } });
   }
 
   return (

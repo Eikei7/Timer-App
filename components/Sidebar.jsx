@@ -10,7 +10,6 @@ const Sidebar = ({ changeView, hideLogo }) => {
 
   return (
     <div>
-      {/* Logotypen som alltid är synlig om 'hideLogo' inte är sant */}
       {!hideLogo && (
         <div className="logo" onClick={toggleMenu}>
           <img src="./img/timer-100.png" alt="Logo" />
