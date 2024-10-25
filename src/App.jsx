@@ -50,7 +50,8 @@ const App = () => {
       )}
       {view === 'AlarmView' && (
         <AlarmView 
-          changeView={changeView} 
+          changeView={changeView}
+          timer={timer}
         />
       )}
       {view === 'DigitalTimer' && (

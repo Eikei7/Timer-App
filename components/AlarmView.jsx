@@ -1,6 +1,12 @@
 import React from 'react';
 
-const AlarmView = ({ changeView }) => {
+const AlarmView = ({ changeView, timer }) => {
+  const abortTimer = () => {
+    timer.stop();
+    console.log('Timern stoppad');
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } }); // Återgå till SetTimer-vyn
+  }
+
   return (
     <div className="alarm-view">
       <div className="alarm-view">
@@ -13,7 +19,7 @@ const AlarmView = ({ changeView }) => {
 
       <img src="../img/alarm-bell.png" alt="Alarm clock" />
       <h1>Time's up!</h1>
-      <button className="newtimer-btn" onClick={() => changeView('SetTimer')}>
+      <button className="newtimer-btn" onClick={abortTimer}>
         SET NEW TIMER
       </button>
     </div>
