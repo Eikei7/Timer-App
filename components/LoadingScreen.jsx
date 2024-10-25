@@ -11,8 +11,9 @@ const LoadingScreen = ({ changeView }) => {
         <motion.img 
           src="./img/timer-1000.png" 
           alt="Logo"
-          whileHover={{ scale: 1.2 }}
           onClick={() => changeView('SetTimer')}
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 1, repeat: Infinity }}
         />
         <h2 className="appTitle">TimeDeck</h2>
         <p className="appText">For all your timing needs</p>
