@@ -1,7 +1,9 @@
 # TimeDeck timer App
 
+![Timer App Screenshot](timer-app-screenshot.png)
+
 ## Description
-The TimeDeck timer App is a mobile-friendly web application designed for time tracking, built with **React**, **Framer Motion** for animations, and **EasyTimer.js** for timer functionality. This app provides a versatile and user-friendly experience for setting, displaying, and managing a countdown timer with multiple views.
+The TimeDeck timer App is a mobile-friendly web application designed for time tracking, built with **React**, **Framer Motion** for animations, and **EasyTimer React Hook** for timer functionality. This app provides a versatile and user-friendly experience for setting, displaying, and managing a countdown timer with multiple views.
 
 ## Features
 The app includes several views that allow the user to manage and display the timer in different ways:
@@ -24,8 +26,8 @@ The app includes several views that allow the user to manage and display the tim
 
 ## Technologies
 - **React** for component management and view transitions.
-- **Framer Motion** for animations.
-- **EasyTimer.js** for timer logic, with support for countdown, start, and stop functions.
+- **[Framer Motion](https://www.framer.com/motion/)** for animations.
+- **[EasyTimer React Hook](https://github.com/albert-gonzalez/easytimer-react-hook)** for timer logic, with support for countdown, start, and stop functions. 
 - **CSS** for custom styles and additional animation effects.
 
 ## Use Cases
