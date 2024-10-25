@@ -62,9 +62,11 @@ const App = () => {
       )}
       {view === 'TextTimer' && (
         <TextTimer 
-          minutes={startValues.minutes} 
-          seconds={startValues.seconds} 
-        />
+        minutes={startValues.minutes} 
+        seconds={startValues.seconds} 
+        timer={timer} 
+        changeView={changeView} // Skicka changeView korrekt till TextTimer
+      />
       )}
     </div>
   );

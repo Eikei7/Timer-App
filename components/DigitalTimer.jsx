@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useTimer from 'easytimer-react-hook';
 
 const DigitalTimer = ({ startValues, changeView, timer }) => {
   const [timeValues, setTimeValues] = useState(timer.getTimeValues());
@@ -33,13 +32,11 @@ const DigitalTimer = ({ startValues, changeView, timer }) => {
     };
   }, [startValues, timer, changeView]);
 
-  // Funktion för att avbryta timern och navigera tillbaka till SetTimer
   const abortTimer = () => {
-    console.log('Timer avbruten');
     timer.stop();
-    changeView('SetTimer');
-  };
-
+    console.log('Timern stoppad');
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } }); // Återgå till SetTimer-vyn
+  }
   // Lägg till nolla framför sekunderna om de är mindre än 10
   const formattedSeconds = String(timeValues.seconds).padStart(2, '0');
 

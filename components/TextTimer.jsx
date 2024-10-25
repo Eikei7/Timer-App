@@ -47,13 +47,25 @@ const convertTimeToWords = (minutes, seconds) => {
   return timeInWords;
 };
 
-// Komponent som visar tiden i ord
-const TextTimer = ({ minutes, seconds }) => {
+const TextTimer = ({ minutes, seconds, timer, changeView }) => {
   const timeInWords = convertTimeToWords(minutes, seconds);
+
+  // Funktion för att avbryta och återställa timern
+  const abortTimer = () => {
+    if (timer) {
+      timer.reset(); // Återställ timern
+      timer.stop();
+      console.log('Timern återställd');
+    }
+    changeView('SetTimer'); // Navigera tillbaka till SetTimer-vyn
+  };
 
   return (
     <div className="time-in-words">
       <h2>{timeInWords}</h2>
+      <button onClick={abortTimer} className="abort-btn">
+        ABORT TIMER
+      </button>
     </div>
   );
 };

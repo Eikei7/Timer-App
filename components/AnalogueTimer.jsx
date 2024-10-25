@@ -36,12 +36,10 @@ const AnalogueTimer = ({ changeView, startValues, timer }) => {
   }, [startValues, timer, changeView]);
 
   const abortTimer = () => {
-    timer.reset(); // Nollställ timern
     timer.stop();
-    console.log('Timern återställd');
-    changeView('SetTimer'); // Återgå till SetTimer-vyn
-  
-  };
+    console.log('Timern stoppad');
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } });
+  }
   // Beräkna vinkeln för visarna baserat på tiden
   const minuteDegrees = (time.minutes + time.seconds / 60) * 6;
   const secondDegrees = time.seconds * 6;
