@@ -255,7 +255,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    animation: vibrate 0.5s infinite;
+    animation: vibrate 0.7s infinite;
   }
  
   
