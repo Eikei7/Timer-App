@@ -52,13 +52,10 @@ const TextTimer = ({ minutes, seconds, timer, changeView }) => {
 
   // Funktion för att avbryta och återställa timern
   const abortTimer = () => {
-    if (timer) {
-      timer.reset(); // Återställ timern
-      timer.stop();
-      console.log('Timern återställd');
-    }
-    changeView('SetTimer'); // Navigera tillbaka till SetTimer-vyn
-  };
+    timer.stop();
+    console.log('Timern stoppad');
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } }); // Återgå till SetTimer-vyn
+  }
 
   return (
     <div className="time-in-words">

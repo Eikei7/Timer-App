@@ -4,7 +4,6 @@ const DigitalTimer = ({ startValues, changeView, timer }) => {
   const [timeValues, setTimeValues] = useState(timer.getTimeValues());
 
   useEffect(() => {
-    // Kolla om timern redan körs, om inte starta den
     if (!timer.isRunning()) {
       console.log('Startar timern med:', startValues.minutes, 'minuter');
       timer.start({
@@ -13,7 +12,6 @@ const DigitalTimer = ({ startValues, changeView, timer }) => {
       });
     }
 
-    // Lyssna på uppdateringar av sekunder och uppdatera state
     const updateTime = () => {
       console.log('Tid uppdaterad:', timer.getTimeValues());
       setTimeValues(timer.getTimeValues());
@@ -21,7 +19,6 @@ const DigitalTimer = ({ startValues, changeView, timer }) => {
 
     timer.addEventListener('secondsUpdated', updateTime);
 
-    // Hantera när tiden är slut
     timer.addEventListener('targetAchieved', () => {
       console.log('Tiden är slut!');
       changeView('AlarmView');
@@ -35,9 +32,8 @@ const DigitalTimer = ({ startValues, changeView, timer }) => {
   const abortTimer = () => {
     timer.stop();
     console.log('Timern stoppad');
-    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } }); // Återgå till SetTimer-vyn
+    changeView('SetTimer', { startValues: { minutes: 0, seconds: 0 } });
   }
-  // Lägg till nolla framför sekunderna om de är mindre än 10
   const formattedSeconds = String(timeValues.seconds).padStart(2, '0');
 
   return (
